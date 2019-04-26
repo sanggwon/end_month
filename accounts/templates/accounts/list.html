@@ -1,0 +1,6 @@
+{% extends 'accounts/base.html' %}
+{% block bb %}
+{% for user in users %}
+    <a href="{% url 'accounts:detail' user.id %}"><h1>{{user}}</h1></a>
+{% endfor %}
+{% endblock %}

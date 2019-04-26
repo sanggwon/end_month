@@ -1,0 +1,14 @@
+{% extends 'posts/base.html' %}
+{% block bb %}
+
+{% for post in posts %}
+    <h2>{{post.title}}</h2>
+    <p>좋아요 : {{post.likes.count}}</p>
+    {% if user in post.likes.all %}
+        <a href="{% url 'posts:like' post.id %}">좋아요 취소</a>
+    {% else %}
+        <a href="{% url 'posts:like' post.id %}">좋아요</a>
+    {% endif %}
+{% endfor %}
+
+{% endblock %}

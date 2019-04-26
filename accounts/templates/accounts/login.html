@@ -1,0 +1,12 @@
+{% extends 'accounts/base.html' %}
+{% block bb %}
+{% if user.is_authenticated %}
+    <h2>{{user}}님이 로그인하셨습니다.</h2>
+{% endif %}
+
+<form action="", method ="post">
+    {% csrf_token %}
+    {{login_form}}
+    <input type="submit" value="Submit"/>
+</form>
+{% endblock %}
